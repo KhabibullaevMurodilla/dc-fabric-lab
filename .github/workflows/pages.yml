@@ -55,7 +55,7 @@ jobs:
           sudo systemctl stop frr || true
           sudo systemctl disable frr || true
 
-      - name: Build the namespace topology (root: creates netns/veth/bridges)
+      - name: Build the namespace topology (needs root -- creates netns/veth/bridges)
         run: sudo python3 scripts/build_topology.py
 
       - name: Deploy FRR to every node
