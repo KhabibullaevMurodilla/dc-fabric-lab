@@ -54,6 +54,19 @@ jobs:
           # about which instance is being looked at.
           sudo systemctl stop frr || true
           sudo systemctl disable frr || true
+          # ansible/deploy.yml starts every daemon as `-u root -g root`,
+          # but FRR's zebra/bgpd refuse to start unless the invoking user
+          # is a MEMBER of the compiled-in vty group ("frrvty") regardless
+          # of whether that user is root -- a fresh install's root account
+          # isn't a member by default, so without this every daemon fails
+          # with "privs_init: user(root) is not part of vty group
+          # specified(frrvty)". Every command in this workflow goes through
+          # `sudo`, which re-resolves its target user's group membership
+          # from scratch on each invocation -- unlike a plain forked shell,
+          # which only inherits whatever groups its parent process already
+          # had cached -- so this takes effect on the very next `sudo`
+          # command, with no new login session needed.
+          sudo usermod -aG frrvty root
 
       - name: Build the namespace topology (needs root -- creates netns/veth/bridges)
         run: sudo python3 scripts/build_topology.py
