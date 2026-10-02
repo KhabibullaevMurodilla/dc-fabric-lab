@@ -187,7 +187,7 @@ capture state (including a real failover), tear the fabric back down —
 and publishes `web/` to GitHub Pages, on every push to `main` and weekly.
 No Docker, no third-party service: GitHub's own `ubuntu-latest` runners
 already have the kernel namespace/veth/VXLAN primitives this lab needs,
-with `sudo` for the root access they take.
+with `sudo` for the root access they take.  <https://khabibullaevmurodilla.github.io/dc-fabric-lab/>
 
 **One-time setup**: in the repo's Settings → Pages, set Source to "GitHub
 Actions", then either push to `main` or run the workflow manually once
