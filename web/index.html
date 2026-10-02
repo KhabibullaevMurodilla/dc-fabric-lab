@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BGP EVPN / VXLAN Fabric Lab</title>
+<style>
+  :root {
+    --bg: #0b0f14;
+    --panel: #121820;
+    --panel-border: #1f2a36;
+    --text: #e6edf3;
+    --muted: #8b98a5;
+    --accent: #4fd1c5;
+    --accent2: #f6ad55;
+    --bad: #fc8181;
+    --good: #48bb78;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    padding: 24px 16px 64px;
+  }
+  .wrap { max-width: 1000px; margin: 0 auto; }
+  h1 { font-size: 1.6rem; margin-bottom: 4px; }
+  .lede { color: var(--muted); margin-top: 0; line-height: 1.5; }
+  .panel {
+    background: var(--panel);
+    border: 1px solid var(--panel-border);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+  }
+  .panel h2 { margin-top: 0; font-size: 1.1rem; }
+  .panel p.note { color: var(--muted); font-size: 0.9rem; }
+  .pill-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+  .pill { background: #182230; border: 1px solid var(--panel-border); border-radius: 999px; padding: 6px 12px; font-size: 0.85rem; }
+  .pill.good { border-color: var(--good); color: var(--good); }
+  .pill.bad { border-color: var(--bad); color: var(--bad); }
+  svg { width: 100%; height: auto; }
+  .node-label { font-size: 13px; fill: var(--text); text-anchor: middle; font-weight: 600; }
+  .node-sub { font-size: 10px; fill: var(--muted); text-anchor: middle; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-top: 8px; }
+  th, td { text-align: left; padding: 6px 10px; border-bottom: 1px solid var(--panel-border); }
+  th { color: var(--muted); font-weight: 500; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 700px) { .grid-2 { grid-template-columns: 1fr; } }
+  .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.82rem; }
+  .before-after { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin-top: 10px; }
+  .ba-box { background: #182230; border: 1px solid var(--panel-border); border-radius: 8px; padding: 12px 16px; }
+  .ba-box.before { border-color: var(--muted); }
+  .ba-box.after { border-color: var(--good); }
+  .arrow { font-size: 1.4rem; color: var(--muted); }
+  a { color: var(--accent); }
+  footer { color: var(--muted); font-size: 0.8rem; text-align: center; margin-top: 40px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>BGP EVPN / VXLAN Fabric Lab</h1>
+  <p class="lede">
+    A real leaf-spine data-centre fabric &mdash; BGP underlay, BGP EVPN control plane, VXLAN
+    overlay &mdash; built from Linux network namespaces and FRRouting, the same networking
+    stack Cumulus Linux and SONiC run on real switches. Every number below is live output
+    captured from the actual running fabric at snapshot time, not a simulation.
+  </p>
+  <div id="provenance" class="pill-row"></div>
+
+  <div class="panel">
+    <h2>Topology</h2>
+    <p class="note">Link color reflects the real BGP underlay session state captured at snapshot time.</p>
+    <svg id="topoSvg" viewBox="0 0 900 480"></svg>
+    <div class="pill-row">
+      <span class="pill good">&#9679; BGP session Established</span>
+      <span class="pill bad">&#9679; not Established</span>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="panel">
+      <h2>BGP underlay + EVPN, per node</h2>
+      <div id="bgpTables"></div>
+    </div>
+    <div class="panel">
+      <h2>VNI 100 &mdash; VTEP discovery per leaf</h2>
+      <div id="vniTables"></div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h2>Reachability</h2>
+    <div id="pingResults" class="pill-row"></div>
+  </div>
+
+  <div class="panel">
+    <h2>EVPN host mobility &mdash; live failover demo</h2>
+    <p class="note">
+      host2 is dual-homed to leaf2 and leaf3 with one shared MAC. This snapshot includes a
+      real failover run: the active link was switched to the other leaf, and leaf1 &mdash;
+      a switch that isn't even connected to the leaf that changed &mdash; is shown here
+      re-learning the same MAC behind the new VTEP, purely from BGP EVPN, with zero
+      config touched anywhere except host2 itself.
+    </p>
+    <div id="failoverDemo"></div>
+  </div>
+
+  <footer id="errorBanner">
+    Source: run this lab yourself from <code>topology/</code> + <code>ansible/</code> + <code>scripts/</code> in the repo this page is published from.
+  </footer>
+</div>
+
+<script>
+try {
+  fetch('data.json')
+    .then(r => { if (!r.ok) throw new Error('data.json request failed: HTTP ' + r.status); return r.json(); })
+    .then(render)
+    .catch(showError);
+} catch (err) { showError(err); }
+
+function showError(err) {
+  const banner = document.getElementById('errorBanner');
+  banner.style.cssText = 'background:#c4601f;color:#fff;padding:12px;border-radius:8px;text-align:left;';
+  const hint = window.location.protocol === 'file:'
+    ? 'This page was opened directly as a file — serve it over http(s) (e.g. GitHub Pages) so fetch() can load data.json.'
+    : 'Could not load or parse data.json next to this page.';
+  banner.textContent = hint + ' (' + err.message + ')';
+}
+
+function render(data) {
+  renderProvenance(data);
+  renderTopology(data);
+  renderBgpTables(data);
+  renderVniTables(data);
+  renderPings(data);
+  renderFailover(data);
+}
+
+function renderProvenance(data) {
+  const vni = data.overlay || {};
+  document.getElementById('provenance').innerHTML = `
+    <span class="pill">${data.nodes.length} switches</span>
+    <span class="pill">${data.hosts.length} hosts</span>
+    <span class="pill">VNI ${vni.vni}</span>
+    <span class="pill">${vni.subnet}</span>
+    <span class="pill">snapshot: ${new Date(data.generated_at).toUTCString()}</span>
+  `;
+}
+
+function sessionEstablished(data, a, b) {
+  const underlayA = (data.bgp_state[a] || {}).underlay || {};
+  const peers = underlayA.peers || {};
+  for (const ip in peers) {
+    if (peers[ip].hostname === b) return peers[ip].state === 'Established';
+  }
+  return null;
+}
+
+function renderTopology(data) {
+  const svg = document.getElementById('topoSvg');
+  const spines = data.nodes.filter(n => n.role === 'spine');
+  const leaves = data.nodes.filter(n => n.role === 'leaf');
+  const hosts = data.hosts;
+
+  const W = 900;
+  const pos = {};
+  spines.forEach((n, i) => pos[n.id] = { x: W * (i + 1) / (spines.length + 1), y: 70 });
+  leaves.forEach((n, i) => pos[n.id] = { x: W * (i + 1) / (leaves.length + 1), y: 250 });
+  hosts.forEach((h) => {
+    const attachXs = h.attach.map(a => pos[a.switch].x);
+    const x = attachXs.reduce((a, b) => a + b, 0) / attachXs.length;
+    pos[h.id] = { x, y: 420 };
+  });
+
+  let svgHtml = '';
+
+  // Underlay links (spine<->leaf), colored by real BGP session state.
+  data.links.forEach(l => {
+    const established = sessionEstablished(data, l.a, l.b);
+    const color = established === null ? '#4a5a6a' : (established ? '#48bb78' : '#fc8181');
+    const pa = pos[l.a], pb = pos[l.b];
+    svgHtml += `<line x1="${pa.x}" y1="${pa.y}" x2="${pb.x}" y2="${pb.y}" stroke="${color}" stroke-width="2" />`;
+  });
+
+  // Host attach links. The dashed/solid "active vs. standby" styling only
+  // makes sense for a multihomed host (more than one uplink) whose
+  // failover state this snapshot actually captured -- a single-homed
+  // host's one and only link is just "connected", not "standby".
+  hosts.forEach(h => {
+    const multihomed = h.attach.length > 1;
+    h.attach.forEach(a => {
+      const sw = pos[a.switch];
+      const host = pos[h.id];
+      let color = '#4a5a6a', dash = '';
+      if (multihomed && data.failover) {
+        const isActive = data.failover.new_leaf === a.switch;
+        color = isActive ? '#4fd1c5' : '#4a5a6a';
+        dash = isActive ? '' : 'stroke-dasharray="4,4"';
+      } else {
+        color = '#4fd1c5';
+      }
+      svgHtml += `<line x1="${sw.x}" y1="${sw.y}" x2="${host.x}" y2="${host.y}" stroke="${color}" stroke-width="2" ${dash} />`;
+    });
+  });
+
+  // Nodes.
+  const allNodes = [
+    ...spines.map(n => ({ ...n, kind: 'switch' })),
+    ...leaves.map(n => ({ ...n, kind: 'switch' })),
+    ...hosts.map(h => ({ ...h, kind: 'host' })),
+  ];
+  allNodes.forEach(n => {
+    const p = pos[n.id];
+    const r = n.kind === 'host' ? 24 : 30;
+    const fill = n.kind === 'host' ? '#2d3f52' : (n.role === 'spine' ? '#1f3a3a' : '#1f2f3a');
+    svgHtml += `<circle cx="${p.x}" cy="${p.y}" r="${r}" fill="${fill}" stroke="#1f2a36" stroke-width="1.5" />`;
+    svgHtml += `<text x="${p.x}" y="${p.y - 2}" class="node-label">${n.id}</text>`;
+    const sub = n.kind === 'host' ? (n.ip || '').split('/')[0] : ('AS ' + n.asn);
+    svgHtml += `<text x="${p.x}" y="${p.y + 13}" class="node-sub">${sub}</text>`;
+  });
+
+  svg.innerHTML = svgHtml;
+}
+
+function renderBgpTables(data) {
+  const container = document.getElementById('bgpTables');
+  container.innerHTML = data.nodes.map(n => {
+    const underlay = (data.bgp_state[n.id] || {}).underlay || {};
+    const peers = underlay.peers || {};
+    const rows = Object.entries(peers).map(([ip, p]) => `
+      <tr>
+        <td>${p.hostname || ip}</td>
+        <td>${p.state}</td>
+        <td>${p.peerUptime || '-'}</td>
+        <td>${p.pfxRcd ?? '-'}</td>
+      </tr>`).join('');
+    return `
+      <div style="margin-bottom:14px;">
+        <strong>${n.id}</strong> <span class="mono" style="color:var(--muted)">AS ${n.asn}</span>
+        <table>
+          <tr><th>Peer</th><th>State</th><th>Up</th><th>PfxRcd</th></tr>
+          ${rows || '<tr><td colspan="4" style="color:var(--muted)">no peers</td></tr>'}
+        </table>
+      </div>`;
+  }).join('');
+}
+
+function renderVniTables(data) {
+  const container = document.getElementById('vniTables');
+  const leaves = data.nodes.filter(n => n.role === 'leaf');
+  container.innerHTML = `
+    <table>
+      <tr><th>Leaf</th><th>VNI</th><th># MACs</th><th>Remote VTEPs</th></tr>
+      ${leaves.map(l => {
+        const vni = (data.vni_tables[l.id] || {})[String(data.overlay.vni)] || {};
+        return `<tr>
+          <td>${l.id}</td>
+          <td>${vni.vni ?? '-'}</td>
+          <td>${vni.numMacs ?? '-'}</td>
+          <td class="mono">${(vni.remoteVteps || []).join(', ') || '-'}</td>
+        </tr>`;
+      }).join('')}
+    </table>`;
+}
+
+function renderPings(data) {
+  const container = document.getElementById('pingResults');
+  const entries = [
+    ...Object.entries(data.underlay_pings || {}).map(([k, v]) => [k.replace('_to_', ' → '), v]),
+    ['host1 → host2 (data plane)', data.dataplane_ping],
+  ];
+  container.innerHTML = entries.map(([label, v]) => {
+    const ok = v && v.loss_pct === 0;
+    return `<span class="pill ${ok ? 'good' : 'bad'}">${label}: ${v ? (100 - v.loss_pct).toFixed(0) : '?'}% delivered</span>`;
+  }).join('');
+}
+
+function renderFailover(data) {
+  const f = data.failover;
+  const container = document.getElementById('failoverDemo');
+  if (!f) { container.textContent = 'No failover run included in this snapshot.'; return; }
+  const pingAfter = f.ping_host1_to_host2_after_failover || {};
+  const ok = pingAfter.loss_pct === 0;
+  container.innerHTML = `
+    <div class="before-after">
+      <div class="ba-box before">
+        <div style="color:var(--muted);font-size:0.8rem;">BEFORE &mdash; leaf1's view</div>
+        <div class="mono">${f.mac} via ${f.old_leaf}${f.before ? ' (' + f.before.dst + ')' : ''}</div>
+      </div>
+      <div class="arrow">&rarr;</div>
+      <div class="ba-box after">
+        <div style="color:var(--muted);font-size:0.8rem;">AFTER failover &mdash; leaf1's view</div>
+        <div class="mono">${f.mac} via ${f.new_leaf}${f.after ? ' (' + f.after.dst + ')' : ''}</div>
+      </div>
+    </div>
+    <div class="pill-row">
+      <span class="pill ${ok ? 'good' : 'bad'}">host1 &rarr; host2 after failover: ${pingAfter.received}/${pingAfter.transmitted} delivered</span>
+    </div>
+  `;
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+asn: 65011
+loopback: 10.0.0.1
+vtep: 10.0.0.1
+p2p_links:
+  - {local_if: to_spine1, peer_ip: "10.255.0.0", peer_asn: 65000, peer_name: spine1}
+  - {local_if: to_spine2, peer_ip: "10.255.0.6", peer_asn: 65000, peer_name: spine2}

@@ -1,0 +1,65 @@
+---
+# Renders FRR config for every switch from inventory + host_vars, and
+# (re)starts zebra/bgpd for that node inside its network namespace.
+#
+# Each node is a real, independent FRR instance -- run with `-N <node>`
+# (FRR's own "pathspace" flag) so its pidfile / zserv socket / vty socket
+# live under /var/run/frr/<node>/ instead of colliding with every other
+# node's instance, while `ip netns exec <node>` scopes its actual network
+# stack (interfaces, routes, sockets) to that node's namespace. This is the
+# same technique FRR's own topotests suite uses to run multi-node topologies
+# on one machine.
+
+- name: Deploy FRR to the fabric
+  hosts: switches
+  gather_facts: false
+  vars:
+    config_root: /etc/frr-lab
+
+  tasks:
+    - name: Ensure per-node config directory exists
+      ansible.builtin.file:
+        path: "{{ config_root }}/{{ inventory_hostname }}"
+        state: directory
+        mode: "0755"
+
+    - name: Render zebra.conf
+      ansible.builtin.template:
+        src: zebra.conf.j2
+        dest: "{{ config_root }}/{{ inventory_hostname }}/zebra.conf"
+        mode: "0644"
+
+    - name: Render bgpd.conf
+      ansible.builtin.template:
+        src: bgpd.conf.j2
+        dest: "{{ config_root }}/{{ inventory_hostname }}/bgpd.conf"
+        mode: "0644"
+
+    - name: Stop any previous instance of this node's FRR daemons
+      ansible.builtin.shell: |
+        pkill -f "[-]N {{ inventory_hostname }} -u root" || true
+        sleep 0.3
+      # the "[-]N" bracket trick (matches literal "-N" via a 1-char regex
+      # class) stops pkill's own invoking shell command -- which itself
+      # contains this string verbatim -- from self-matching and killing
+      # itself. Classic pgrep/pkill self-match pitfall.
+      changed_when: false
+
+    - name: Start zebra for this node, inside its namespace
+      ansible.builtin.shell: >
+        ip netns exec {{ inventory_hostname }}
+        /usr/lib/frr/zebra -d -N {{ inventory_hostname }} -u root -g root
+        -f {{ config_root }}/{{ inventory_hostname }}/zebra.conf
+      changed_when: true
+
+    - name: Start bgpd for this node, inside its namespace
+      ansible.builtin.shell: >
+        ip netns exec {{ inventory_hostname }}
+        /usr/lib/frr/bgpd -d -N {{ inventory_hostname }} -u root -g root
+        -f {{ config_root }}/{{ inventory_hostname }}/bgpd.conf
+      changed_when: true
+
+    - name: Wait for the vty socket to come up
+      ansible.builtin.wait_for:
+        path: "/var/run/frr/{{ inventory_hostname }}/bgpd.vty"
+        timeout: 10

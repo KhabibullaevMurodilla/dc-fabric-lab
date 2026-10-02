@@ -1,0 +1,6 @@
+asn: 65000
+loopback: 10.0.0.101
+p2p_links:
+  - {local_if: to_leaf1, peer_ip: "10.255.0.1", peer_asn: 65011, peer_name: leaf1}
+  - {local_if: to_leaf2, peer_ip: "10.255.0.3", peer_asn: 65012, peer_name: leaf2}
+  - {local_if: to_leaf3, peer_ip: "10.255.0.5", peer_asn: 65013, peer_name: leaf3}

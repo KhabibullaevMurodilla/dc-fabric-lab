@@ -1,0 +1,1064 @@
+{
+  "generated_at": "2026-10-02T22:43:18.250039+00:00",
+  "nodes": [
+    {
+      "id": "spine1",
+      "role": "spine",
+      "asn": 65000,
+      "loopback": "10.0.0.101"
+    },
+    {
+      "id": "spine2",
+      "role": "spine",
+      "asn": 65000,
+      "loopback": "10.0.0.102"
+    },
+    {
+      "id": "leaf1",
+      "role": "leaf",
+      "asn": 65011,
+      "loopback": "10.0.0.1"
+    },
+    {
+      "id": "leaf2",
+      "role": "leaf",
+      "asn": 65012,
+      "loopback": "10.0.0.2"
+    },
+    {
+      "id": "leaf3",
+      "role": "leaf",
+      "asn": 65013,
+      "loopback": "10.0.0.3"
+    }
+  ],
+  "links": [
+    {
+      "a": "spine1",
+      "a_if": "to_leaf1",
+      "b": "leaf1",
+      "b_if": "to_spine1"
+    },
+    {
+      "a": "spine1",
+      "a_if": "to_leaf2",
+      "b": "leaf2",
+      "b_if": "to_spine1"
+    },
+    {
+      "a": "spine1",
+      "a_if": "to_leaf3",
+      "b": "leaf3",
+      "b_if": "to_spine1"
+    },
+    {
+      "a": "spine2",
+      "a_if": "to_leaf1",
+      "b": "leaf1",
+      "b_if": "to_spine2"
+    },
+    {
+      "a": "spine2",
+      "a_if": "to_leaf2",
+      "b": "leaf2",
+      "b_if": "to_spine2"
+    },
+    {
+      "a": "spine2",
+      "a_if": "to_leaf3",
+      "b": "leaf3",
+      "b_if": "to_spine2"
+    }
+  ],
+  "hosts": [
+    {
+      "id": "host1",
+      "attach": [
+        {
+          "switch": "leaf1"
+        }
+      ],
+      "ip": "10.100.100.11/24"
+    },
+    {
+      "id": "host2",
+      "attach": [
+        {
+          "switch": "leaf2"
+        },
+        {
+          "switch": "leaf3"
+        }
+      ],
+      "ip": "10.100.100.12/24"
+    }
+  ],
+  "overlay": {
+    "vni": 100,
+    "subnet": "10.100.100.0/24"
+  },
+  "bgp_state": {
+    "spine1": {
+      "underlay": {
+        "routerId": "10.0.0.101",
+        "as": 65000,
+        "vrfId": 0,
+        "vrfName": "default",
+        "tableVersion": 10,
+        "ribCount": 21,
+        "ribMemory": 4032,
+        "peerCount": 3,
+        "peerMemory": 2224392,
+        "peers": {
+          "10.255.0.1": {
+            "hostname": "leaf1",
+            "remoteAs": 65011,
+            "localAs": 65000,
+            "version": 4,
+            "msgRcvd": 16,
+            "msgSent": 16,
+            "tableVersion": 0,
+            "outq": 0,
+            "inq": 0,
+            "peerUptime": "00:00:09",
+            "peerUptimeMsec": 9000,
+            "peerUptimeEstablishedEpoch": 1790980980,
+            "pfxRcd": 3,
+            "pfxSnt": 10,
+            "state": "Established",
+            "peerState": "OK",
+            "connectionsEstablished": 1,
+            "connectionsDropped": 0,
+            "desc": "leaf1",
+            "idType": "ipv4"
+          },
+          "10.255.0.3": {
+            "hostname": "leaf2",
+            "remoteAs": 65012,
+            "localAs": 65000,
+            "version": 4,
+            "msgRcvd": 16,
+            "msgSent": 16,
+            "tableVersion": 0,
+            "outq": 0,
+            "inq": 0,
+            "peerUptime": "00:00:09",
+            "peerUptimeMsec": 9000,
+            "peerUptimeEstablishedEpoch": 1790980980,
+            "pfxRcd": 3,
+            "pfxSnt": 10,
+            "state": "Established",
+            "peerState": "OK",
+            "connectionsEstablished": 1,
+            "connectionsDropped": 0,
+            "desc": "leaf2",
+            "idType": "ipv4"
+          },
+          "10.255.0.5": {
+            "hostname": "leaf3",
+            "remoteAs": 65013,
+            "localAs": 65000,
+            "version": 4,
+            "msgRcvd": 16,
+            "msgSent": 16,
+            "tableVersion": 0,
+            "outq": 0,
+            "inq": 0,
+            "peerUptime": "00:00:09",
+            "peerUptimeMsec": 9000,
+            "peerUptimeEstablishedEpoch": 1790980980,
+            "pfxRcd": 3,
+            "pfxSnt": 10,
+            "state": "Established",
+            "peerState": "OK",
+            "connectionsEstablished": 1,
+            "connectionsDropped": 0,
+            "desc": "leaf3",
+            "idType": "ipv4"
+          }
+        },
+        "failedPeers": 0,
+        "displayedPeers": 3,
+        "totalPeers": 3,
+        "dynamicPeers": 0,
+        "bestPath": {
+          "multiPathRelax": "false"
+        }
+      },
+      "evpn": {
+        "routerId": "10.0.0.101",
+        "as": 65000,
+        "vrfId": 0,
+        "vrfName": "default",
+        "tableVersion": 0,
+        "ribCount": 5,
+        "ribMemory": 960,
+        "peerCount": 3,
+        "peerMemory": 2224392,
+        "peers": {
+          "10.255.0.1": {
+            "hostname": "leaf1",
+            "remoteAs": 65011,
+            "localAs": 65000,
+            "version": 4,
+            "msgRcvd": 16,
+            "msgSent": 16,
+            "tableVersion": 0,
+            "outq": 0,
+            "inq": 0,
+            "peerUptime": "00:00:09",
+            "peerUptimeMsec": 9000,
+            "peerUptimeEstablishedEpoch": 1790980980,
+            "pfxRcd": 2,
+            "pfxSnt": 5,
+            "state": "Established",
+            "peerState": "OK",
+            "connectionsEstablished": 1,
+            "connectionsDropped": 0,
+            "desc": "leaf1",
+            "idType": "ipv4"
+          },
+          "10.255.0.3": {
+            "hostname": "leaf2",
+            "remoteAs": 65012,
+            "localAs": 65000,
+            "version": 4,
+            "msgRcvd": 16,
+            "msgSent": 16,
+            "tableVersion": 0,
+            "outq": 0,
+            "inq": 0,
+            "peerUptime": "00:00:09",
+            "peerUptimeMsec": 9000,
+            "peerUptimeEstablishedEpoch": 1790980980,
+            "pfxRcd": 2,
+            "pfxSnt": 5,
+            "state": "Established",
+            "peerState": "OK",
+            "connectionsEstablished": 1,
+            "connectionsDropped": 0,
+            "desc": "leaf2",
+            "idType": "ipv4"
+          },
+          "10.255.0.5": {
+            "hostname": "leaf3",
+            "remoteAs": 65013,
+            "localAs": 65000,
+            "version": 4,
+            "msgRcvd": 16,
+            "msgSent": 16,
+            "tableVersion": 0,
+            "outq": 0,
+            "inq": 0,
+            "peerUptime": "00:00:09",
+            "peerUptimeMsec": 9000,
+            "peerUptimeEstablishedEpoch": 1790980980,
+            "pfxRcd": 1,
+            "pfxSnt": 5,
+            "state": "Established",
+            "peerState": "OK",
+            "connectionsEstablished": 1,
+            "connectionsDropped": 0,
+            "desc": "leaf3",
+            "idType": "ipv4"
+          }
+        },
+        "failedPeers": 0,
+        "displayedPeers": 3,
+        "totalPeers": 3,
+        "dynamicPeers": 0,
+        "bestPath": {
+          "multiPathRelax": "false"
+        }
+      }
+    },
+    "spine2": {
+      "underlay": {
+        "routerId": "10.0.0.102",
+        "as": 65000,
+        "vrfId": 0,
+        "vrfName": "default",
+        "tableVersion": 10,
+        "ribCount": 21,
+        "ribMemory": 4032,
+        "peerCount": 3,
+        "peerMemory": 2224392,
+        "peers": {
+          "10.255.0.7": {
+            "hostname": "leaf1",
+            "remoteAs": 65011,
+            "localAs": 65000,
+            "version": 4,
+            "msgRcvd": 16,
+            "msgSent": 16,
+            "tableVersion": 0,
+            "outq": 0,
+            "inq": 0,
+            "peerUptime": "00:00:08",
+            "peerUptimeMsec": 8000,
+            "peerUptimeEstablishedEpoch": 1790980981,
+            "pfxRcd": 3,
+            "pfxSnt": 10,
+            "state": "Established",
+            "peerState": "OK",
+            "connectionsEstablished": 1,
+            "connectionsDropped": 0,
+            "desc": "leaf1",
+            "idType": "ipv4"
+          },
+          "10.255.0.9": {
+            "hostname": "leaf2",
+            "remoteAs": 65012,
+            "localAs": 65000,
+            "version": 4,
+            "msgRcvd": 16,
+            "msgSent": 16,
+            "tableVersion": 0,
+            "outq": 0,
+            "inq": 0,
+            "peerUptime": "00:00:08",
+            "peerUptimeMsec": 8000,
+            "peerUptimeEstablishedEpoch": 1790980981,
+            "pfxRcd": 3,
+            "pfxSnt": 10,
+            "state": "Established",
+            "peerState": "OK",
+            "connectionsEstablished": 1,
+            "connectionsDropped": 0,
+            "desc": "leaf2",
+            "idType": "ipv4"
+          },
+          "10.255.0.11": {
+            "hostname": "leaf3",
+            "remoteAs": 65013,
+            "localAs": 65000,
+            "version": 4,
+            "msgRcvd": 16,
+            "msgSent": 16,
+            "tableVersion": 0,
+            "outq": 0,
+            "inq": 0,
+            "peerUptime": "00:00:08",
+            "peerUptimeMsec": 8000,
+            "peerUptimeEstablishedEpoch": 1790980981,
+            "pfxRcd": 3,
+            "pfxSnt": 10,
+            "state": "Established",
+            "peerState": "OK",
+            "connectionsEstablished": 1,
+            "connectionsDropped": 0,
+            "desc": "leaf3",
+            "idType": "ipv4"
+          }
+        },
+        "failedPeers": 0,
+        "displayedPeers": 3,
+        "totalPeers": 3,
+        "dynamicPeers": 0,
+        "bestPath": {
+          "multiPathRelax": "false"
+        }
+      },
+      "evpn": {
+        "routerId": "10.0.0.102",
+        "as": 65000,
+        "vrfId": 0,
+        "vrfName": "default",
+        "tableVersion": 0,
+        "ribCount": 5,
+        "ribMemory": 960,
+        "peerCount": 3,
+        "peerMemory": 2224392,
+        "peers": {
+          "10.255.0.7": {
+            "hostname": "leaf1",
+            "remoteAs": 65011,
+            "localAs": 65000,
+            "version": 4,
+            "msgRcvd": 16,
+            "msgSent": 16,
+            "tableVersion": 0,
+            "outq": 0,
+            "inq": 0,
+            "peerUptime": "00:00:08",
+            "peerUptimeMsec": 8000,
+            "peerUptimeEstablishedEpoch": 1790980981,
+            "pfxRcd": 2,
+            "pfxSnt": 5,
+            "state": "Established",
+            "peerState": "OK",
+            "connectionsEstablished": 1,
+            "connectionsDropped": 0,
+            "desc": "leaf1",
+            "idType": "ipv4"
+          },
+          "10.255.0.9": {
+            "hostname": "leaf2",
+            "remoteAs": 65012,
+            "localAs": 65000,
+            "version": 4,
+            "msgRcvd": 16,
+            "msgSent": 16,
+            "tableVersion": 0,
+            "outq": 0,
+            "inq": 0,
+            "peerUptime": "00:00:08",
+            "peerUptimeMsec": 8000,
+            "peerUptimeEstablishedEpoch": 1790980981,
+            "pfxRcd": 2,
+            "pfxSnt": 5,
+            "state": "Established",
+            "peerState": "OK",
+            "connectionsEstablished": 1,
+            "connectionsDropped": 0,
+            "desc": "leaf2",
+            "idType": "ipv4"
+          },
+          "10.255.0.11": {
+            "hostname": "leaf3",
+            "remoteAs": 65013,
+            "localAs": 65000,
+            "version": 4,
+            "msgRcvd": 16,
+            "msgSent": 16,
+            "tableVersion": 0,
+            "outq": 0,
+            "inq": 0,
+            "peerUptime": "00:00:08",
+            "peerUptimeMsec": 8000,
+            "peerUptimeEstablishedEpoch": 1790980981,
+            "pfxRcd": 1,
+            "pfxSnt": 5,
+            "state": "Established",
+            "peerState": "OK",
+            "connectionsEstablished": 1,
+            "connectionsDropped": 0,
+            "desc": "leaf3",
+            "idType": "ipv4"
+          }
+        },
+        "failedPeers": 0,
+        "displayedPeers": 3,
+        "totalPeers": 3,
+        "dynamicPeers": 0,
+        "bestPath": {
+          "multiPathRelax": "false"
+        }
+      }
+    },
+    "leaf1": {
+      "underlay": {
+        "routerId": "10.0.0.1",
+        "as": 65011,
+        "vrfId": 0,
+        "vrfName": "default",
+        "tableVersion": 15,
+        "ribCount": 21,
+        "ribMemory": 4032,
+        "peerCount": 2,
+        "peerMemory": 1482928,
+        "peers": {
+          "10.255.0.0": {
+            "hostname": "spine1",
+            "remoteAs": 65000,
+            "localAs": 65011,
+            "version": 4,
+            "msgRcvd": 16,
+            "msgSent": 16,
+            "tableVersion": 0,
+            "outq": 0,
+            "inq": 0,
+            "peerUptime": "00:00:09",
+            "peerUptimeMsec": 9000,
+            "peerUptimeEstablishedEpoch": 1790980980,
+            "pfxRcd": 8,
+            "pfxSnt": 11,
+            "state": "Established",
+            "peerState": "OK",
+            "connectionsEstablished": 1,
+            "connectionsDropped": 0,
+            "desc": "spine1",
+            "idType": "ipv4"
+          },
+          "10.255.0.6": {
+            "hostname": "spine2",
+            "remoteAs": 65000,
+            "localAs": 65011,
+            "version": 4,
+            "msgRcvd": 16,
+            "msgSent": 16,
+            "tableVersion": 0,
+            "outq": 0,
+            "inq": 0,
+            "peerUptime": "00:00:08",
+            "peerUptimeMsec": 8000,
+            "peerUptimeEstablishedEpoch": 1790980981,
+            "pfxRcd": 8,
+            "pfxSnt": 11,
+            "state": "Established",
+            "peerState": "OK",
+            "connectionsEstablished": 1,
+            "connectionsDropped": 0,
+            "desc": "spine2",
+            "idType": "ipv4"
+          }
+        },
+        "failedPeers": 0,
+        "displayedPeers": 2,
+        "totalPeers": 2,
+        "dynamicPeers": 0,
+        "bestPath": {
+          "multiPathRelax": "false"
+        }
+      },
+      "evpn": {
+        "routerId": "10.0.0.1",
+        "as": 65011,
+        "vrfId": 0,
+        "vrfName": "default",
+        "tableVersion": 0,
+        "ribCount": 5,
+        "ribMemory": 960,
+        "peerCount": 2,
+        "peerMemory": 1482928,
+        "peers": {
+          "10.255.0.0": {
+            "hostname": "spine1",
+            "remoteAs": 65000,
+            "localAs": 65011,
+            "version": 4,
+            "msgRcvd": 16,
+            "msgSent": 16,
+            "tableVersion": 0,
+            "outq": 0,
+            "inq": 0,
+            "peerUptime": "00:00:09",
+            "peerUptimeMsec": 9000,
+            "peerUptimeEstablishedEpoch": 1790980980,
+            "pfxRcd": 3,
+            "pfxSnt": 5,
+            "state": "Established",
+            "peerState": "OK",
+            "connectionsEstablished": 1,
+            "connectionsDropped": 0,
+            "desc": "spine1",
+            "idType": "ipv4"
+          },
+          "10.255.0.6": {
+            "hostname": "spine2",
+            "remoteAs": 65000,
+            "localAs": 65011,
+            "version": 4,
+            "msgRcvd": 16,
+            "msgSent": 16,
+            "tableVersion": 0,
+            "outq": 0,
+            "inq": 0,
+            "peerUptime": "00:00:08",
+            "peerUptimeMsec": 8000,
+            "peerUptimeEstablishedEpoch": 1790980981,
+            "pfxRcd": 3,
+            "pfxSnt": 5,
+            "state": "Established",
+            "peerState": "OK",
+            "connectionsEstablished": 1,
+            "connectionsDropped": 0,
+            "desc": "spine2",
+            "idType": "ipv4"
+          }
+        },
+        "failedPeers": 0,
+        "displayedPeers": 2,
+        "totalPeers": 2,
+        "dynamicPeers": 0,
+        "bestPath": {
+          "multiPathRelax": "false"
+        }
+      }
+    },
+    "leaf2": {
+      "underlay": {
+        "routerId": "10.0.0.2",
+        "as": 65012,
+        "vrfId": 0,
+        "vrfName": "default",
+        "tableVersion": 15,
+        "ribCount": 21,
+        "ribMemory": 4032,
+        "peerCount": 2,
+        "peerMemory": 1482928,
+        "peers": {
+          "10.255.0.2": {
+            "hostname": "spine1",
+            "remoteAs": 65000,
+            "localAs": 65012,
+            "version": 4,
+            "msgRcvd": 16,
+            "msgSent": 16,
+            "tableVersion": 0,
+            "outq": 0,
+            "inq": 0,
+            "peerUptime": "00:00:09",
+            "peerUptimeMsec": 9000,
+            "peerUptimeEstablishedEpoch": 1790980980,
+            "pfxRcd": 8,
+            "pfxSnt": 11,
+            "state": "Established",
+            "peerState": "OK",
+            "connectionsEstablished": 1,
+            "connectionsDropped": 0,
+            "desc": "spine1",
+            "idType": "ipv4"
+          },
+          "10.255.0.8": {
+            "hostname": "spine2",
+            "remoteAs": 65000,
+            "localAs": 65012,
+            "version": 4,
+            "msgRcvd": 16,
+            "msgSent": 16,
+            "tableVersion": 0,
+            "outq": 0,
+            "inq": 0,
+            "peerUptime": "00:00:08",
+            "peerUptimeMsec": 8000,
+            "peerUptimeEstablishedEpoch": 1790980981,
+            "pfxRcd": 8,
+            "pfxSnt": 11,
+            "state": "Established",
+            "peerState": "OK",
+            "connectionsEstablished": 1,
+            "connectionsDropped": 0,
+            "desc": "spine2",
+            "idType": "ipv4"
+          }
+        },
+        "failedPeers": 0,
+        "displayedPeers": 2,
+        "totalPeers": 2,
+        "dynamicPeers": 0,
+        "bestPath": {
+          "multiPathRelax": "false"
+        }
+      },
+      "evpn": {
+        "routerId": "10.0.0.2",
+        "as": 65012,
+        "vrfId": 0,
+        "vrfName": "default",
+        "tableVersion": 0,
+        "ribCount": 5,
+        "ribMemory": 960,
+        "peerCount": 2,
+        "peerMemory": 1482928,
+        "peers": {
+          "10.255.0.2": {
+            "hostname": "spine1",
+            "remoteAs": 65000,
+            "localAs": 65012,
+            "version": 4,
+            "msgRcvd": 16,
+            "msgSent": 16,
+            "tableVersion": 0,
+            "outq": 0,
+            "inq": 0,
+            "peerUptime": "00:00:09",
+            "peerUptimeMsec": 9000,
+            "peerUptimeEstablishedEpoch": 1790980980,
+            "pfxRcd": 3,
+            "pfxSnt": 5,
+            "state": "Established",
+            "peerState": "OK",
+            "connectionsEstablished": 1,
+            "connectionsDropped": 0,
+            "desc": "spine1",
+            "idType": "ipv4"
+          },
+          "10.255.0.8": {
+            "hostname": "spine2",
+            "remoteAs": 65000,
+            "localAs": 65012,
+            "version": 4,
+            "msgRcvd": 16,
+            "msgSent": 16,
+            "tableVersion": 0,
+            "outq": 0,
+            "inq": 0,
+            "peerUptime": "00:00:08",
+            "peerUptimeMsec": 8000,
+            "peerUptimeEstablishedEpoch": 1790980981,
+            "pfxRcd": 3,
+            "pfxSnt": 5,
+            "state": "Established",
+            "peerState": "OK",
+            "connectionsEstablished": 1,
+            "connectionsDropped": 0,
+            "desc": "spine2",
+            "idType": "ipv4"
+          }
+        },
+        "failedPeers": 0,
+        "displayedPeers": 2,
+        "totalPeers": 2,
+        "dynamicPeers": 0,
+        "bestPath": {
+          "multiPathRelax": "false"
+        }
+      }
+    },
+    "leaf3": {
+      "underlay": {
+        "routerId": "10.0.0.3",
+        "as": 65013,
+        "vrfId": 0,
+        "vrfName": "default",
+        "tableVersion": 15,
+        "ribCount": 21,
+        "ribMemory": 4032,
+        "peerCount": 2,
+        "peerMemory": 1482928,
+        "peers": {
+          "10.255.0.4": {
+            "hostname": "spine1",
+            "remoteAs": 65000,
+            "localAs": 65013,
+            "version": 4,
+            "msgRcvd": 16,
+            "msgSent": 16,
+            "tableVersion": 0,
+            "outq": 0,
+            "inq": 0,
+            "peerUptime": "00:00:09",
+            "peerUptimeMsec": 9000,
+            "peerUptimeEstablishedEpoch": 1790980980,
+            "pfxRcd": 8,
+            "pfxSnt": 11,
+            "state": "Established",
+            "peerState": "OK",
+            "connectionsEstablished": 1,
+            "connectionsDropped": 0,
+            "desc": "spine1",
+            "idType": "ipv4"
+          },
+          "10.255.0.10": {
+            "hostname": "spine2",
+            "remoteAs": 65000,
+            "localAs": 65013,
+            "version": 4,
+            "msgRcvd": 16,
+            "msgSent": 16,
+            "tableVersion": 0,
+            "outq": 0,
+            "inq": 0,
+            "peerUptime": "00:00:08",
+            "peerUptimeMsec": 8000,
+            "peerUptimeEstablishedEpoch": 1790980981,
+            "pfxRcd": 8,
+            "pfxSnt": 11,
+            "state": "Established",
+            "peerState": "OK",
+            "connectionsEstablished": 1,
+            "connectionsDropped": 0,
+            "desc": "spine2",
+            "idType": "ipv4"
+          }
+        },
+        "failedPeers": 0,
+        "displayedPeers": 2,
+        "totalPeers": 2,
+        "dynamicPeers": 0,
+        "bestPath": {
+          "multiPathRelax": "false"
+        }
+      },
+      "evpn": {
+        "routerId": "10.0.0.3",
+        "as": 65013,
+        "vrfId": 0,
+        "vrfName": "default",
+        "tableVersion": 0,
+        "ribCount": 5,
+        "ribMemory": 960,
+        "peerCount": 2,
+        "peerMemory": 1482928,
+        "peers": {
+          "10.255.0.4": {
+            "hostname": "spine1",
+            "remoteAs": 65000,
+            "localAs": 65013,
+            "version": 4,
+            "msgRcvd": 16,
+            "msgSent": 16,
+            "tableVersion": 0,
+            "outq": 0,
+            "inq": 0,
+            "peerUptime": "00:00:09",
+            "peerUptimeMsec": 9000,
+            "peerUptimeEstablishedEpoch": 1790980981,
+            "pfxRcd": 4,
+            "pfxSnt": 5,
+            "state": "Established",
+            "peerState": "OK",
+            "connectionsEstablished": 1,
+            "connectionsDropped": 0,
+            "desc": "spine1",
+            "idType": "ipv4"
+          },
+          "10.255.0.10": {
+            "hostname": "spine2",
+            "remoteAs": 65000,
+            "localAs": 65013,
+            "version": 4,
+            "msgRcvd": 16,
+            "msgSent": 16,
+            "tableVersion": 0,
+            "outq": 0,
+            "inq": 0,
+            "peerUptime": "00:00:08",
+            "peerUptimeMsec": 8000,
+            "peerUptimeEstablishedEpoch": 1790980982,
+            "pfxRcd": 4,
+            "pfxSnt": 5,
+            "state": "Established",
+            "peerState": "OK",
+            "connectionsEstablished": 1,
+            "connectionsDropped": 0,
+            "desc": "spine2",
+            "idType": "ipv4"
+          }
+        },
+        "failedPeers": 0,
+        "displayedPeers": 2,
+        "totalPeers": 2,
+        "dynamicPeers": 0,
+        "bestPath": {
+          "multiPathRelax": "false"
+        }
+      }
+    }
+  },
+  "vni_tables": {
+    "leaf1": {
+      "100": {
+        "vni": 100,
+        "type": "L2",
+        "vxlanIf": "vxlan100",
+        "numMacs": 2,
+        "numArpNd": 0,
+        "numRemoteVteps": 2,
+        "tenantVrf": "default",
+        "remoteVteps": [
+          "10.0.0.3",
+          "10.0.0.2"
+        ]
+      }
+    },
+    "leaf2": {
+      "100": {
+        "vni": 100,
+        "type": "L2",
+        "vxlanIf": "vxlan100",
+        "numMacs": 2,
+        "numArpNd": 0,
+        "numRemoteVteps": 2,
+        "tenantVrf": "default",
+        "remoteVteps": [
+          "10.0.0.3",
+          "10.0.0.1"
+        ]
+      }
+    },
+    "leaf3": {
+      "100": {
+        "vni": 100,
+        "type": "L2",
+        "vxlanIf": "vxlan100",
+        "numMacs": 2,
+        "numArpNd": 0,
+        "numRemoteVteps": 2,
+        "tenantVrf": "default",
+        "remoteVteps": [
+          "10.0.0.2",
+          "10.0.0.1"
+        ]
+      }
+    }
+  },
+  "fdb_before": {
+    "leaf1": [
+      {
+        "mac": "22:d1:9e:4e:b7:47",
+        "flags": [
+          "extern_learn"
+        ],
+        "master": "br100",
+        "state": ""
+      },
+      {
+        "mac": "b6:b9:64:ae:db:20",
+        "flags": [],
+        "master": "br100",
+        "state": "permanent"
+      },
+      {
+        "mac": "22:d1:9e:4e:b7:47",
+        "dst": "10.0.0.2",
+        "flags": [
+          "self",
+          "extern_learn"
+        ],
+        "state": ""
+      },
+      {
+        "mac": "00:00:00:00:00:00",
+        "dst": "10.0.0.2",
+        "flags": [
+          "self"
+        ],
+        "state": "permanent"
+      },
+      {
+        "mac": "00:00:00:00:00:00",
+        "dst": "10.0.0.3",
+        "flags": [
+          "self"
+        ],
+        "state": "permanent"
+      }
+    ],
+    "leaf2": [
+      {
+        "mac": "2a:25:72:37:69:76",
+        "flags": [
+          "extern_learn"
+        ],
+        "master": "br100",
+        "state": ""
+      },
+      {
+        "mac": "2a:c9:99:2f:1d:6a",
+        "flags": [],
+        "master": "br100",
+        "state": "permanent"
+      },
+      {
+        "mac": "2a:25:72:37:69:76",
+        "dst": "10.0.0.1",
+        "flags": [
+          "self",
+          "extern_learn"
+        ],
+        "state": ""
+      },
+      {
+        "mac": "00:00:00:00:00:00",
+        "dst": "10.0.0.1",
+        "flags": [
+          "self"
+        ],
+        "state": "permanent"
+      },
+      {
+        "mac": "00:00:00:00:00:00",
+        "dst": "10.0.0.3",
+        "flags": [
+          "self"
+        ],
+        "state": "permanent"
+      }
+    ],
+    "leaf3": [
+      {
+        "mac": "2a:25:72:37:69:76",
+        "flags": [
+          "extern_learn"
+        ],
+        "master": "br100",
+        "state": ""
+      },
+      {
+        "mac": "22:d1:9e:4e:b7:47",
+        "flags": [
+          "extern_learn"
+        ],
+        "master": "br100",
+        "state": ""
+      },
+      {
+        "mac": "4e:22:e9:97:21:08",
+        "flags": [],
+        "master": "br100",
+        "state": "permanent"
+      },
+      {
+        "mac": "22:d1:9e:4e:b7:47",
+        "dst": "10.0.0.2",
+        "flags": [
+          "self",
+          "extern_learn"
+        ],
+        "state": ""
+      },
+      {
+        "mac": "2a:25:72:37:69:76",
+        "dst": "10.0.0.1",
+        "flags": [
+          "self",
+          "extern_learn"
+        ],
+        "state": ""
+      },
+      {
+        "mac": "00:00:00:00:00:00",
+        "dst": "10.0.0.1",
+        "flags": [
+          "self"
+        ],
+        "state": "permanent"
+      },
+      {
+        "mac": "00:00:00:00:00:00",
+        "dst": "10.0.0.2",
+        "flags": [
+          "self"
+        ],
+        "state": "permanent"
+      }
+    ]
+  },
+  "underlay_pings": {
+    "leaf1_to_leaf2": {
+      "transmitted": 2,
+      "received": 2,
+      "loss_pct": 0.0
+    },
+    "leaf1_to_leaf3": {
+      "transmitted": 2,
+      "received": 2,
+      "loss_pct": 0.0
+    }
+  },
+  "dataplane_ping": {
+    "transmitted": 2,
+    "received": 2,
+    "loss_pct": 0.0
+  },
+  "failover": {
+    "mac": "22:d1:9e:4e:b7:47",
+    "old_leaf": "leaf2",
+    "new_leaf": "leaf3",
+    "before": {
+      "mac": "22:d1:9e:4e:b7:47",
+      "dst": "10.0.0.2"
+    },
+    "after": {
+      "mac": "22:d1:9e:4e:b7:47",
+      "dst": "10.0.0.3"
+    },
+    "ping_host1_to_host2_after_failover": {
+      "transmitted": 2,
+      "received": 2,
+      "loss_pct": 0.0
+    }
+  }
+}
