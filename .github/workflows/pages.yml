@@ -1,0 +1,89 @@
+name: Build fabric + deploy GitHub Pages
+
+# Stands the real fabric up from scratch on the runner (Linux netns + veth +
+# FRR -- no Docker, no simulator), captures its actual live state into
+# web/data.json (see scripts/generate_dashboard_data.py), tears the fabric
+# back down, and publishes web/ as a static dashboard of that real run.
+#
+# One-time repo setting this depends on: Settings -> Pages -> Source:
+# "GitHub Actions" (not "Deploy from a branch").
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: "0 7 * * 1"   # weekly, Monday 07:00 UTC
+  push:
+    branches: [main]
+    paths:
+      - "topology/**"
+      - "ansible/**"
+      - "scripts/**"
+      - "web/index.html"
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install FRR + networking tools + Ansible
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y frr frr-pythontools iproute2 bridge-utils \
+            ansible iputils-ping python3-yaml
+          # The distro's frr.service runs one default-namespace instance;
+          # this lab starts its own zebra/bgpd per network namespace via
+          # FRR's -N pathspace flag instead, so the default service is
+          # just noise here -- stop it rather than risk any confusion
+          # about which instance is being looked at.
+          sudo systemctl stop frr || true
+          sudo systemctl disable frr || true
+
+      - name: Build the namespace topology (root: creates netns/veth/bridges)
+        run: sudo python3 scripts/build_topology.py
+
+      - name: Deploy FRR to every node
+        run: sudo ansible-playbook -i ansible/inventory.ini ansible/deploy.yml
+
+      - name: Wait for BGP underlay + EVPN to converge
+        run: sleep 10
+
+      - name: Capture live state -> web/data.json (includes a real failover run)
+        run: sudo python3 scripts/generate_dashboard_data.py
+
+      - name: Tear the fabric back down
+        if: always()
+        run: sudo python3 scripts/teardown_topology.py || true
+
+      - name: Commit updated data (if it changed)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add web/data.json
+          git diff --cached --quiet || git commit -m "Refresh fabric snapshot"
+          git push
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: web
+
+      - id: deployment
+        uses: actions/deploy-pages@v4
