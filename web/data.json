@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-26T13:52:43.896622+00:00",
+  "generated_at": "2026-11-02T16:49:56.702396+00:00",
   "nodes": [
     {
       "id": "spine1",
@@ -122,7 +122,7 @@
             "inq": 0,
             "peerUptime": "00:00:14",
             "peerUptimeMsec": 14000,
-            "peerUptimeEstablishedEpoch": 1793022741,
+            "peerUptimeEstablishedEpoch": 1793638174,
             "pfxRcd": 3,
             "pfxSnt": 10,
             "state": "Established",
@@ -144,7 +144,7 @@
             "inq": 0,
             "peerUptime": "00:00:14",
             "peerUptimeMsec": 14000,
-            "peerUptimeEstablishedEpoch": 1793022741,
+            "peerUptimeEstablishedEpoch": 1793638174,
             "pfxRcd": 3,
             "pfxSnt": 10,
             "state": "Established",
@@ -166,7 +166,7 @@
             "inq": 0,
             "peerUptime": "00:00:14",
             "peerUptimeMsec": 14000,
-            "peerUptimeEstablishedEpoch": 1793022741,
+            "peerUptimeEstablishedEpoch": 1793638174,
             "pfxRcd": 3,
             "pfxSnt": 10,
             "state": "Established",
@@ -208,7 +208,7 @@
             "inq": 0,
             "peerUptime": "00:00:14",
             "peerUptimeMsec": 14000,
-            "peerUptimeEstablishedEpoch": 1793022741,
+            "peerUptimeEstablishedEpoch": 1793638174,
             "pfxRcd": 2,
             "pfxSnt": 6,
             "state": "Established",
@@ -230,7 +230,7 @@
             "inq": 0,
             "peerUptime": "00:00:14",
             "peerUptimeMsec": 14000,
-            "peerUptimeEstablishedEpoch": 1793022741,
+            "peerUptimeEstablishedEpoch": 1793638174,
             "pfxRcd": 2,
             "pfxSnt": 6,
             "state": "Established",
@@ -252,7 +252,7 @@
             "inq": 0,
             "peerUptime": "00:00:14",
             "peerUptimeMsec": 14000,
-            "peerUptimeEstablishedEpoch": 1793022741,
+            "peerUptimeEstablishedEpoch": 1793638174,
             "pfxRcd": 2,
             "pfxSnt": 6,
             "state": "Established",
@@ -296,7 +296,7 @@
             "inq": 0,
             "peerUptime": "00:00:14",
             "peerUptimeMsec": 14000,
-            "peerUptimeEstablishedEpoch": 1793022741,
+            "peerUptimeEstablishedEpoch": 1793638174,
             "pfxRcd": 3,
             "pfxSnt": 10,
             "state": "Established",
@@ -318,7 +318,7 @@
             "inq": 0,
             "peerUptime": "00:00:14",
             "peerUptimeMsec": 14000,
-            "peerUptimeEstablishedEpoch": 1793022741,
+            "peerUptimeEstablishedEpoch": 1793638174,
             "pfxRcd": 3,
             "pfxSnt": 10,
             "state": "Established",
@@ -340,7 +340,7 @@
             "inq": 0,
             "peerUptime": "00:00:14",
             "peerUptimeMsec": 14000,
-            "peerUptimeEstablishedEpoch": 1793022741,
+            "peerUptimeEstablishedEpoch": 1793638174,
             "pfxRcd": 3,
             "pfxSnt": 10,
             "state": "Established",
@@ -382,7 +382,7 @@
             "inq": 0,
             "peerUptime": "00:00:14",
             "peerUptimeMsec": 14000,
-            "peerUptimeEstablishedEpoch": 1793022741,
+            "peerUptimeEstablishedEpoch": 1793638174,
             "pfxRcd": 2,
             "pfxSnt": 6,
             "state": "Established",
@@ -404,7 +404,7 @@
             "inq": 0,
             "peerUptime": "00:00:14",
             "peerUptimeMsec": 14000,
-            "peerUptimeEstablishedEpoch": 1793022741,
+            "peerUptimeEstablishedEpoch": 1793638174,
             "pfxRcd": 2,
             "pfxSnt": 6,
             "state": "Established",
@@ -426,7 +426,7 @@
             "inq": 0,
             "peerUptime": "00:00:14",
             "peerUptimeMsec": 14000,
-            "peerUptimeEstablishedEpoch": 1793022741,
+            "peerUptimeEstablishedEpoch": 1793638174,
             "pfxRcd": 2,
             "pfxSnt": 6,
             "state": "Established",
@@ -470,7 +470,7 @@
             "inq": 0,
             "peerUptime": "00:00:14",
             "peerUptimeMsec": 14000,
-            "peerUptimeEstablishedEpoch": 1793022741,
+            "peerUptimeEstablishedEpoch": 1793638174,
             "pfxRcd": 8,
             "pfxSnt": 11,
             "state": "Established",
@@ -492,7 +492,7 @@
             "inq": 0,
             "peerUptime": "00:00:14",
             "peerUptimeMsec": 14000,
-            "peerUptimeEstablishedEpoch": 1793022741,
+            "peerUptimeEstablishedEpoch": 1793638174,
             "pfxRcd": 8,
             "pfxSnt": 11,
             "state": "Established",
@@ -534,7 +534,7 @@
             "inq": 0,
             "peerUptime": "00:00:14",
             "peerUptimeMsec": 14000,
-            "peerUptimeEstablishedEpoch": 1793022741,
+            "peerUptimeEstablishedEpoch": 1793638174,
             "pfxRcd": 4,
             "pfxSnt": 6,
             "state": "Established",
@@ -556,7 +556,7 @@
             "inq": 0,
             "peerUptime": "00:00:14",
             "peerUptimeMsec": 14000,
-            "peerUptimeEstablishedEpoch": 1793022741,
+            "peerUptimeEstablishedEpoch": 1793638174,
             "pfxRcd": 4,
             "pfxSnt": 6,
             "state": "Established",
@@ -600,7 +600,7 @@
             "inq": 0,
             "peerUptime": "00:00:14",
             "peerUptimeMsec": 14000,
-            "peerUptimeEstablishedEpoch": 1793022741,
+            "peerUptimeEstablishedEpoch": 1793638174,
             "pfxRcd": 8,
             "pfxSnt": 11,
             "state": "Established",
@@ -622,7 +622,7 @@
             "inq": 0,
             "peerUptime": "00:00:14",
             "peerUptimeMsec": 14000,
-            "peerUptimeEstablishedEpoch": 1793022741,
+            "peerUptimeEstablishedEpoch": 1793638174,
             "pfxRcd": 8,
             "pfxSnt": 11,
             "state": "Established",
@@ -664,7 +664,7 @@
             "inq": 0,
             "peerUptime": "00:00:14",
             "peerUptimeMsec": 14000,
-            "peerUptimeEstablishedEpoch": 1793022741,
+            "peerUptimeEstablishedEpoch": 1793638174,
             "pfxRcd": 4,
             "pfxSnt": 6,
             "state": "Established",
@@ -686,7 +686,7 @@
             "inq": 0,
             "peerUptime": "00:00:14",
             "peerUptimeMsec": 14000,
-            "peerUptimeEstablishedEpoch": 1793022741,
+            "peerUptimeEstablishedEpoch": 1793638174,
             "pfxRcd": 4,
             "pfxSnt": 6,
             "state": "Established",
@@ -712,7 +712,7 @@
         "as": 65013,
         "vrfId": 0,
         "vrfName": "default",
-        "tableVersion": 15,
+        "tableVersion": 11,
         "ribCount": 21,
         "ribMemory": 4032,
         "peerCount": 2,
@@ -730,7 +730,7 @@
             "inq": 0,
             "peerUptime": "00:00:14",
             "peerUptimeMsec": 14000,
-            "peerUptimeEstablishedEpoch": 1793022741,
+            "peerUptimeEstablishedEpoch": 1793638174,
             "pfxRcd": 8,
             "pfxSnt": 11,
             "state": "Established",
@@ -752,7 +752,7 @@
             "inq": 0,
             "peerUptime": "00:00:14",
             "peerUptimeMsec": 14000,
-            "peerUptimeEstablishedEpoch": 1793022741,
+            "peerUptimeEstablishedEpoch": 1793638174,
             "pfxRcd": 8,
             "pfxSnt": 11,
             "state": "Established",
@@ -794,7 +794,7 @@
             "inq": 0,
             "peerUptime": "00:00:14",
             "peerUptimeMsec": 14000,
-            "peerUptimeEstablishedEpoch": 1793022741,
+            "peerUptimeEstablishedEpoch": 1793638174,
             "pfxRcd": 4,
             "pfxSnt": 6,
             "state": "Established",
@@ -816,7 +816,7 @@
             "inq": 0,
             "peerUptime": "00:00:14",
             "peerUptimeMsec": 14000,
-            "peerUptimeEstablishedEpoch": 1793022741,
+            "peerUptimeEstablishedEpoch": 1793638174,
             "pfxRcd": 4,
             "pfxSnt": 6,
             "state": "Established",
@@ -878,8 +878,8 @@
         "numRemoteVteps": 2,
         "tenantVrf": "default",
         "remoteVteps": [
-          "10.0.0.2",
-          "10.0.0.1"
+          "10.0.0.1",
+          "10.0.0.2"
         ]
       }
     }
@@ -887,19 +887,31 @@
   "fdb_before": {
     "leaf1": [
       {
-        "mac": "3a:51:69:e2:16:15",
+        "mac": "96:aa:b3:8d:32:a8",
         "flags": [],
         "master": "br100",
         "state": ""
       },
       {
-        "mac": "02:63:ca:ad:81:c7",
+        "mac": "4a:fb:f0:3b:cf:ea",
         "flags": [],
         "master": "br100",
         "state": ""
       },
       {
-        "mac": "42:26:27:03:06:5a",
+        "mac": "9e:a7:80:f5:92:ad",
+        "flags": [],
+        "master": "br100",
+        "state": ""
+      },
+      {
+        "mac": "02:eb:a4:87:78:2d",
+        "flags": [],
+        "master": "br100",
+        "state": ""
+      },
+      {
+        "mac": "ea:31:ee:24:2f:7a",
         "vlan": 1,
         "flags": [
           "extern_learn"
@@ -908,7 +920,7 @@
         "state": ""
       },
       {
-        "mac": "42:26:27:03:06:5a",
+        "mac": "ea:31:ee:24:2f:7a",
         "flags": [
           "extern_learn"
         ],
@@ -916,7 +928,7 @@
         "state": ""
       },
       {
-        "mac": "42:22:05:5c:00:76",
+        "mac": "8a:90:ff:e3:ec:8c",
         "vlan": 1,
         "flags": [
           "extern_learn"
@@ -925,7 +937,7 @@
         "state": ""
       },
       {
-        "mac": "42:22:05:5c:00:76",
+        "mac": "8a:90:ff:e3:ec:8c",
         "flags": [
           "extern_learn"
         ],
@@ -933,20 +945,20 @@
         "state": ""
       },
       {
-        "mac": "12:9d:3a:75:fe:cd",
+        "mac": "3a:9b:27:bb:a1:55",
         "vlan": 1,
         "flags": [],
         "master": "br100",
         "state": "permanent"
       },
       {
-        "mac": "12:9d:3a:75:fe:cd",
+        "mac": "3a:9b:27:bb:a1:55",
         "flags": [],
         "master": "br100",
         "state": "permanent"
       },
       {
-        "mac": "42:26:27:03:06:5a",
+        "mac": "ea:31:ee:24:2f:7a",
         "dst": "10.0.0.3",
         "flags": [
           "self",
@@ -971,7 +983,7 @@
         "state": "permanent"
       },
       {
-        "mac": "42:22:05:5c:00:76",
+        "mac": "8a:90:ff:e3:ec:8c",
         "dst": "10.0.0.2",
         "flags": [
           "self",
@@ -982,28 +994,31 @@
     ],
     "leaf2": [
       {
-        "mac": "42:22:05:5c:00:76",
-        "vlan": 1,
-        "flags": [
-          "extern_learn"
-        ],
-        "master": "br100",
-        "state": ""
-      },
-      {
-        "mac": "12:9d:3a:75:fe:cd",
+        "mac": "1e:f7:07:c7:9c:02",
         "flags": [],
         "master": "br100",
         "state": ""
       },
       {
-        "mac": "02:63:ca:ad:81:c7",
+        "mac": "9e:a7:80:f5:92:ad",
         "flags": [],
         "master": "br100",
         "state": ""
       },
       {
-        "mac": "42:26:27:03:06:5a",
+        "mac": "3a:9b:27:bb:a1:55",
+        "flags": [],
+        "master": "br100",
+        "state": ""
+      },
+      {
+        "mac": "02:eb:a4:87:78:2d",
+        "flags": [],
+        "master": "br100",
+        "state": ""
+      },
+      {
+        "mac": "8a:90:ff:e3:ec:8c",
         "vlan": 1,
         "flags": [
           "extern_learn"
@@ -1012,15 +1027,7 @@
         "state": ""
       },
       {
-        "mac": "42:26:27:03:06:5a",
-        "flags": [
-          "extern_learn"
-        ],
-        "master": "br100",
-        "state": ""
-      },
-      {
-        "mac": "ce:76:52:23:44:f1",
+        "mac": "ea:31:ee:24:2f:7a",
         "vlan": 1,
         "flags": [
           "extern_learn"
@@ -1029,7 +1036,7 @@
         "state": ""
       },
       {
-        "mac": "ce:76:52:23:44:f1",
+        "mac": "ea:31:ee:24:2f:7a",
         "flags": [
           "extern_learn"
         ],
@@ -1037,20 +1044,37 @@
         "state": ""
       },
       {
-        "mac": "3a:51:69:e2:16:15",
+        "mac": "82:57:2d:9d:3f:af",
+        "vlan": 1,
+        "flags": [
+          "extern_learn"
+        ],
+        "master": "br100",
+        "state": ""
+      },
+      {
+        "mac": "82:57:2d:9d:3f:af",
+        "flags": [
+          "extern_learn"
+        ],
+        "master": "br100",
+        "state": ""
+      },
+      {
+        "mac": "96:aa:b3:8d:32:a8",
         "vlan": 1,
         "flags": [],
         "master": "br100",
         "state": "permanent"
       },
       {
-        "mac": "3a:51:69:e2:16:15",
+        "mac": "96:aa:b3:8d:32:a8",
         "flags": [],
         "master": "br100",
         "state": "permanent"
       },
       {
-        "mac": "42:22:05:5c:00:76",
+        "mac": "8a:90:ff:e3:ec:8c",
         "dst": "10.0.0.3",
         "flags": [
           "self",
@@ -1059,7 +1083,7 @@
         "state": ""
       },
       {
-        "mac": "42:26:27:03:06:5a",
+        "mac": "ea:31:ee:24:2f:7a",
         "dst": "10.0.0.3",
         "flags": [
           "self",
@@ -1084,7 +1108,7 @@
         "state": "permanent"
       },
       {
-        "mac": "ce:76:52:23:44:f1",
+        "mac": "82:57:2d:9d:3f:af",
         "dst": "10.0.0.1",
         "flags": [
           "self",
@@ -1095,19 +1119,31 @@
     ],
     "leaf3": [
       {
-        "mac": "3a:51:69:e2:16:15",
+        "mac": "1e:f7:07:c7:9c:02",
         "flags": [],
         "master": "br100",
         "state": ""
       },
       {
-        "mac": "12:9d:3a:75:fe:cd",
+        "mac": "96:aa:b3:8d:32:a8",
         "flags": [],
         "master": "br100",
         "state": ""
       },
       {
-        "mac": "42:22:05:5c:00:76",
+        "mac": "4a:fb:f0:3b:cf:ea",
+        "flags": [],
+        "master": "br100",
+        "state": ""
+      },
+      {
+        "mac": "3a:9b:27:bb:a1:55",
+        "flags": [],
+        "master": "br100",
+        "state": ""
+      },
+      {
+        "mac": "82:57:2d:9d:3f:af",
         "vlan": 1,
         "flags": [
           "extern_learn"
@@ -1116,7 +1152,15 @@
         "state": ""
       },
       {
-        "mac": "ce:76:52:23:44:f1",
+        "mac": "82:57:2d:9d:3f:af",
+        "flags": [
+          "extern_learn"
+        ],
+        "master": "br100",
+        "state": ""
+      },
+      {
+        "mac": "8a:90:ff:e3:ec:8c",
         "vlan": 1,
         "flags": [
           "extern_learn"
@@ -1125,7 +1169,7 @@
         "state": ""
       },
       {
-        "mac": "ce:76:52:23:44:f1",
+        "mac": "8a:90:ff:e3:ec:8c",
         "flags": [
           "extern_learn"
         ],
@@ -1133,29 +1177,21 @@
         "state": ""
       },
       {
-        "mac": "42:22:05:5c:00:76",
-        "flags": [
-          "extern_learn"
-        ],
-        "master": "br100",
-        "state": ""
-      },
-      {
-        "mac": "02:63:ca:ad:81:c7",
+        "mac": "9e:a7:80:f5:92:ad",
         "vlan": 1,
         "flags": [],
         "master": "br100",
         "state": "permanent"
       },
       {
-        "mac": "02:63:ca:ad:81:c7",
+        "mac": "9e:a7:80:f5:92:ad",
         "flags": [],
         "master": "br100",
         "state": "permanent"
       },
       {
-        "mac": "42:22:05:5c:00:76",
-        "dst": "10.0.0.2",
+        "mac": "82:57:2d:9d:3f:af",
+        "dst": "10.0.0.1",
         "flags": [
           "self",
           "extern_learn"
@@ -1164,14 +1200,6 @@
       },
       {
         "mac": "00:00:00:00:00:00",
-        "dst": "10.0.0.1",
-        "flags": [
-          "self"
-        ],
-        "state": "permanent"
-      },
-      {
-        "mac": "00:00:00:00:00:00",
         "dst": "10.0.0.2",
         "flags": [
           "self"
@@ -1179,8 +1207,16 @@
         "state": "permanent"
       },
       {
-        "mac": "ce:76:52:23:44:f1",
+        "mac": "00:00:00:00:00:00",
         "dst": "10.0.0.1",
+        "flags": [
+          "self"
+        ],
+        "state": "permanent"
+      },
+      {
+        "mac": "8a:90:ff:e3:ec:8c",
+        "dst": "10.0.0.2",
         "flags": [
           "self",
           "extern_learn"
@@ -1207,15 +1243,15 @@
     "loss_pct": 0.0
   },
   "failover": {
-    "mac": "42:22:05:5c:00:76",
+    "mac": "8a:90:ff:e3:ec:8c",
     "old_leaf": "leaf2",
     "new_leaf": "leaf3",
     "before": {
-      "mac": "42:22:05:5c:00:76",
+      "mac": "8a:90:ff:e3:ec:8c",
       "dst": "10.0.0.2"
     },
     "after": {
-      "mac": "42:22:05:5c:00:76",
+      "mac": "8a:90:ff:e3:ec:8c",
       "dst": "10.0.0.3"
     },
     "ping_host1_to_host2_after_failover": {
