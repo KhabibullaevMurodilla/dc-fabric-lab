@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-02T16:49:56.702396+00:00",
+  "generated_at": "2026-11-09T17:09:38.430276+00:00",
   "nodes": [
     {
       "id": "spine1",
@@ -115,14 +115,14 @@
             "remoteAs": 65011,
             "localAs": 65000,
             "version": 4,
-            "msgRcvd": 22,
+            "msgRcvd": 21,
             "msgSent": 22,
             "tableVersion": 0,
             "outq": 0,
             "inq": 0,
-            "peerUptime": "00:00:14",
-            "peerUptimeMsec": 14000,
-            "peerUptimeEstablishedEpoch": 1793638174,
+            "peerUptime": "00:00:13",
+            "peerUptimeMsec": 13000,
+            "peerUptimeEstablishedEpoch": 1794244156,
             "pfxRcd": 3,
             "pfxSnt": 10,
             "state": "Established",
@@ -137,14 +137,14 @@
             "remoteAs": 65012,
             "localAs": 65000,
             "version": 4,
-            "msgRcvd": 22,
+            "msgRcvd": 21,
             "msgSent": 22,
             "tableVersion": 0,
             "outq": 0,
             "inq": 0,
-            "peerUptime": "00:00:14",
-            "peerUptimeMsec": 14000,
-            "peerUptimeEstablishedEpoch": 1793638174,
+            "peerUptime": "00:00:13",
+            "peerUptimeMsec": 13000,
+            "peerUptimeEstablishedEpoch": 1794244156,
             "pfxRcd": 3,
             "pfxSnt": 10,
             "state": "Established",
@@ -159,14 +159,14 @@
             "remoteAs": 65013,
             "localAs": 65000,
             "version": 4,
-            "msgRcvd": 22,
+            "msgRcvd": 21,
             "msgSent": 22,
             "tableVersion": 0,
             "outq": 0,
             "inq": 0,
-            "peerUptime": "00:00:14",
-            "peerUptimeMsec": 14000,
-            "peerUptimeEstablishedEpoch": 1793638174,
+            "peerUptime": "00:00:13",
+            "peerUptimeMsec": 13000,
+            "peerUptimeEstablishedEpoch": 1794244156,
             "pfxRcd": 3,
             "pfxSnt": 10,
             "state": "Established",
@@ -201,14 +201,14 @@
             "remoteAs": 65011,
             "localAs": 65000,
             "version": 4,
-            "msgRcvd": 22,
+            "msgRcvd": 21,
             "msgSent": 22,
             "tableVersion": 0,
             "outq": 0,
             "inq": 0,
-            "peerUptime": "00:00:14",
-            "peerUptimeMsec": 14000,
-            "peerUptimeEstablishedEpoch": 1793638174,
+            "peerUptime": "00:00:13",
+            "peerUptimeMsec": 13000,
+            "peerUptimeEstablishedEpoch": 1794244157,
             "pfxRcd": 2,
             "pfxSnt": 6,
             "state": "Established",
@@ -223,14 +223,14 @@
             "remoteAs": 65012,
             "localAs": 65000,
             "version": 4,
-            "msgRcvd": 22,
+            "msgRcvd": 21,
             "msgSent": 22,
             "tableVersion": 0,
             "outq": 0,
             "inq": 0,
-            "peerUptime": "00:00:14",
-            "peerUptimeMsec": 14000,
-            "peerUptimeEstablishedEpoch": 1793638174,
+            "peerUptime": "00:00:13",
+            "peerUptimeMsec": 13000,
+            "peerUptimeEstablishedEpoch": 1794244157,
             "pfxRcd": 2,
             "pfxSnt": 6,
             "state": "Established",
@@ -245,14 +245,14 @@
             "remoteAs": 65013,
             "localAs": 65000,
             "version": 4,
-            "msgRcvd": 22,
+            "msgRcvd": 21,
             "msgSent": 22,
             "tableVersion": 0,
             "outq": 0,
             "inq": 0,
-            "peerUptime": "00:00:14",
-            "peerUptimeMsec": 14000,
-            "peerUptimeEstablishedEpoch": 1793638174,
+            "peerUptime": "00:00:13",
+            "peerUptimeMsec": 13000,
+            "peerUptimeEstablishedEpoch": 1794244157,
             "pfxRcd": 2,
             "pfxSnt": 6,
             "state": "Established",
@@ -289,14 +289,14 @@
             "remoteAs": 65011,
             "localAs": 65000,
             "version": 4,
-            "msgRcvd": 22,
+            "msgRcvd": 21,
             "msgSent": 22,
             "tableVersion": 0,
             "outq": 0,
             "inq": 0,
-            "peerUptime": "00:00:14",
-            "peerUptimeMsec": 14000,
-            "peerUptimeEstablishedEpoch": 1793638174,
+            "peerUptime": "00:00:13",
+            "peerUptimeMsec": 13000,
+            "peerUptimeEstablishedEpoch": 1794244157,
             "pfxRcd": 3,
             "pfxSnt": 10,
             "state": "Established",
@@ -311,14 +311,14 @@
             "remoteAs": 65012,
             "localAs": 65000,
             "version": 4,
-            "msgRcvd": 22,
+            "msgRcvd": 21,
             "msgSent": 22,
             "tableVersion": 0,
             "outq": 0,
             "inq": 0,
-            "peerUptime": "00:00:14",
-            "peerUptimeMsec": 14000,
-            "peerUptimeEstablishedEpoch": 1793638174,
+            "peerUptime": "00:00:13",
+            "peerUptimeMsec": 13000,
+            "peerUptimeEstablishedEpoch": 1794244157,
             "pfxRcd": 3,
             "pfxSnt": 10,
             "state": "Established",
@@ -333,14 +333,14 @@
             "remoteAs": 65013,
             "localAs": 65000,
             "version": 4,
-            "msgRcvd": 22,
+            "msgRcvd": 21,
             "msgSent": 22,
             "tableVersion": 0,
             "outq": 0,
             "inq": 0,
-            "peerUptime": "00:00:14",
-            "peerUptimeMsec": 14000,
-            "peerUptimeEstablishedEpoch": 1793638174,
+            "peerUptime": "00:00:13",
+            "peerUptimeMsec": 13000,
+            "peerUptimeEstablishedEpoch": 1794244157,
             "pfxRcd": 3,
             "pfxSnt": 10,
             "state": "Established",
@@ -375,14 +375,14 @@
             "remoteAs": 65011,
             "localAs": 65000,
             "version": 4,
-            "msgRcvd": 22,
+            "msgRcvd": 21,
             "msgSent": 22,
             "tableVersion": 0,
             "outq": 0,
             "inq": 0,
-            "peerUptime": "00:00:14",
-            "peerUptimeMsec": 14000,
-            "peerUptimeEstablishedEpoch": 1793638174,
+            "peerUptime": "00:00:13",
+            "peerUptimeMsec": 13000,
+            "peerUptimeEstablishedEpoch": 1794244157,
             "pfxRcd": 2,
             "pfxSnt": 6,
             "state": "Established",
@@ -397,14 +397,14 @@
             "remoteAs": 65012,
             "localAs": 65000,
             "version": 4,
-            "msgRcvd": 22,
+            "msgRcvd": 21,
             "msgSent": 22,
             "tableVersion": 0,
             "outq": 0,
             "inq": 0,
-            "peerUptime": "00:00:14",
-            "peerUptimeMsec": 14000,
-            "peerUptimeEstablishedEpoch": 1793638174,
+            "peerUptime": "00:00:13",
+            "peerUptimeMsec": 13000,
+            "peerUptimeEstablishedEpoch": 1794244157,
             "pfxRcd": 2,
             "pfxSnt": 6,
             "state": "Established",
@@ -419,14 +419,14 @@
             "remoteAs": 65013,
             "localAs": 65000,
             "version": 4,
-            "msgRcvd": 22,
+            "msgRcvd": 21,
             "msgSent": 22,
             "tableVersion": 0,
             "outq": 0,
             "inq": 0,
-            "peerUptime": "00:00:14",
-            "peerUptimeMsec": 14000,
-            "peerUptimeEstablishedEpoch": 1793638174,
+            "peerUptime": "00:00:13",
+            "peerUptimeMsec": 13000,
+            "peerUptimeEstablishedEpoch": 1794244157,
             "pfxRcd": 2,
             "pfxSnt": 6,
             "state": "Established",
@@ -463,14 +463,14 @@
             "remoteAs": 65000,
             "localAs": 65011,
             "version": 4,
-            "msgRcvd": 22,
-            "msgSent": 22,
+            "msgRcvd": 23,
+            "msgSent": 23,
             "tableVersion": 0,
             "outq": 0,
             "inq": 0,
-            "peerUptime": "00:00:14",
-            "peerUptimeMsec": 14000,
-            "peerUptimeEstablishedEpoch": 1793638174,
+            "peerUptime": "00:00:13",
+            "peerUptimeMsec": 13000,
+            "peerUptimeEstablishedEpoch": 1794244157,
             "pfxRcd": 8,
             "pfxSnt": 11,
             "state": "Established",
@@ -486,13 +486,13 @@
             "localAs": 65011,
             "version": 4,
             "msgRcvd": 22,
-            "msgSent": 22,
+            "msgSent": 21,
             "tableVersion": 0,
             "outq": 0,
             "inq": 0,
-            "peerUptime": "00:00:14",
-            "peerUptimeMsec": 14000,
-            "peerUptimeEstablishedEpoch": 1793638174,
+            "peerUptime": "00:00:13",
+            "peerUptimeMsec": 13000,
+            "peerUptimeEstablishedEpoch": 1794244157,
             "pfxRcd": 8,
             "pfxSnt": 11,
             "state": "Established",
@@ -527,14 +527,14 @@
             "remoteAs": 65000,
             "localAs": 65011,
             "version": 4,
-            "msgRcvd": 22,
-            "msgSent": 22,
+            "msgRcvd": 23,
+            "msgSent": 23,
             "tableVersion": 0,
             "outq": 0,
             "inq": 0,
-            "peerUptime": "00:00:14",
-            "peerUptimeMsec": 14000,
-            "peerUptimeEstablishedEpoch": 1793638174,
+            "peerUptime": "00:00:13",
+            "peerUptimeMsec": 13000,
+            "peerUptimeEstablishedEpoch": 1794244157,
             "pfxRcd": 4,
             "pfxSnt": 6,
             "state": "Established",
@@ -550,13 +550,13 @@
             "localAs": 65011,
             "version": 4,
             "msgRcvd": 22,
-            "msgSent": 22,
+            "msgSent": 21,
             "tableVersion": 0,
             "outq": 0,
             "inq": 0,
-            "peerUptime": "00:00:14",
-            "peerUptimeMsec": 14000,
-            "peerUptimeEstablishedEpoch": 1793638174,
+            "peerUptime": "00:00:13",
+            "peerUptimeMsec": 13000,
+            "peerUptimeEstablishedEpoch": 1794244157,
             "pfxRcd": 4,
             "pfxSnt": 6,
             "state": "Established",
@@ -594,13 +594,13 @@
             "localAs": 65012,
             "version": 4,
             "msgRcvd": 22,
-            "msgSent": 22,
+            "msgSent": 21,
             "tableVersion": 0,
             "outq": 0,
             "inq": 0,
-            "peerUptime": "00:00:14",
-            "peerUptimeMsec": 14000,
-            "peerUptimeEstablishedEpoch": 1793638174,
+            "peerUptime": "00:00:13",
+            "peerUptimeMsec": 13000,
+            "peerUptimeEstablishedEpoch": 1794244157,
             "pfxRcd": 8,
             "pfxSnt": 11,
             "state": "Established",
@@ -616,13 +616,13 @@
             "localAs": 65012,
             "version": 4,
             "msgRcvd": 22,
-            "msgSent": 22,
+            "msgSent": 21,
             "tableVersion": 0,
             "outq": 0,
             "inq": 0,
-            "peerUptime": "00:00:14",
-            "peerUptimeMsec": 14000,
-            "peerUptimeEstablishedEpoch": 1793638174,
+            "peerUptime": "00:00:13",
+            "peerUptimeMsec": 13000,
+            "peerUptimeEstablishedEpoch": 1794244157,
             "pfxRcd": 8,
             "pfxSnt": 11,
             "state": "Established",
@@ -658,13 +658,13 @@
             "localAs": 65012,
             "version": 4,
             "msgRcvd": 22,
-            "msgSent": 22,
+            "msgSent": 21,
             "tableVersion": 0,
             "outq": 0,
             "inq": 0,
-            "peerUptime": "00:00:14",
-            "peerUptimeMsec": 14000,
-            "peerUptimeEstablishedEpoch": 1793638174,
+            "peerUptime": "00:00:13",
+            "peerUptimeMsec": 13000,
+            "peerUptimeEstablishedEpoch": 1794244157,
             "pfxRcd": 4,
             "pfxSnt": 6,
             "state": "Established",
@@ -680,13 +680,13 @@
             "localAs": 65012,
             "version": 4,
             "msgRcvd": 22,
-            "msgSent": 22,
+            "msgSent": 21,
             "tableVersion": 0,
             "outq": 0,
             "inq": 0,
-            "peerUptime": "00:00:14",
-            "peerUptimeMsec": 14000,
-            "peerUptimeEstablishedEpoch": 1793638174,
+            "peerUptime": "00:00:13",
+            "peerUptimeMsec": 13000,
+            "peerUptimeEstablishedEpoch": 1794244157,
             "pfxRcd": 4,
             "pfxSnt": 6,
             "state": "Established",
@@ -724,13 +724,13 @@
             "localAs": 65013,
             "version": 4,
             "msgRcvd": 22,
-            "msgSent": 22,
+            "msgSent": 21,
             "tableVersion": 0,
             "outq": 0,
             "inq": 0,
-            "peerUptime": "00:00:14",
-            "peerUptimeMsec": 14000,
-            "peerUptimeEstablishedEpoch": 1793638174,
+            "peerUptime": "00:00:13",
+            "peerUptimeMsec": 13000,
+            "peerUptimeEstablishedEpoch": 1794244157,
             "pfxRcd": 8,
             "pfxSnt": 11,
             "state": "Established",
@@ -746,13 +746,13 @@
             "localAs": 65013,
             "version": 4,
             "msgRcvd": 22,
-            "msgSent": 22,
+            "msgSent": 21,
             "tableVersion": 0,
             "outq": 0,
             "inq": 0,
-            "peerUptime": "00:00:14",
-            "peerUptimeMsec": 14000,
-            "peerUptimeEstablishedEpoch": 1793638174,
+            "peerUptime": "00:00:13",
+            "peerUptimeMsec": 13000,
+            "peerUptimeEstablishedEpoch": 1794244157,
             "pfxRcd": 8,
             "pfxSnt": 11,
             "state": "Established",
@@ -788,13 +788,13 @@
             "localAs": 65013,
             "version": 4,
             "msgRcvd": 22,
-            "msgSent": 22,
+            "msgSent": 21,
             "tableVersion": 0,
             "outq": 0,
             "inq": 0,
-            "peerUptime": "00:00:14",
-            "peerUptimeMsec": 14000,
-            "peerUptimeEstablishedEpoch": 1793638174,
+            "peerUptime": "00:00:13",
+            "peerUptimeMsec": 13000,
+            "peerUptimeEstablishedEpoch": 1794244157,
             "pfxRcd": 4,
             "pfxSnt": 6,
             "state": "Established",
@@ -810,13 +810,13 @@
             "localAs": 65013,
             "version": 4,
             "msgRcvd": 22,
-            "msgSent": 22,
+            "msgSent": 21,
             "tableVersion": 0,
             "outq": 0,
             "inq": 0,
-            "peerUptime": "00:00:14",
-            "peerUptimeMsec": 14000,
-            "peerUptimeEstablishedEpoch": 1793638174,
+            "peerUptime": "00:00:13",
+            "peerUptimeMsec": 13000,
+            "peerUptimeEstablishedEpoch": 1794244157,
             "pfxRcd": 4,
             "pfxSnt": 6,
             "state": "Established",
@@ -887,31 +887,25 @@
   "fdb_before": {
     "leaf1": [
       {
-        "mac": "96:aa:b3:8d:32:a8",
+        "mac": "96:9d:91:70:5e:8b",
         "flags": [],
         "master": "br100",
         "state": ""
       },
       {
-        "mac": "4a:fb:f0:3b:cf:ea",
+        "mac": "22:4c:33:e6:0f:7a",
         "flags": [],
         "master": "br100",
         "state": ""
       },
       {
-        "mac": "9e:a7:80:f5:92:ad",
+        "mac": "7e:d5:c8:e4:19:b8",
         "flags": [],
         "master": "br100",
         "state": ""
       },
       {
-        "mac": "02:eb:a4:87:78:2d",
-        "flags": [],
-        "master": "br100",
-        "state": ""
-      },
-      {
-        "mac": "ea:31:ee:24:2f:7a",
+        "mac": "26:e9:f4:88:bd:af",
         "vlan": 1,
         "flags": [
           "extern_learn"
@@ -920,7 +914,7 @@
         "state": ""
       },
       {
-        "mac": "ea:31:ee:24:2f:7a",
+        "mac": "26:e9:f4:88:bd:af",
         "flags": [
           "extern_learn"
         ],
@@ -928,7 +922,7 @@
         "state": ""
       },
       {
-        "mac": "8a:90:ff:e3:ec:8c",
+        "mac": "b6:a1:84:3e:c4:cc",
         "vlan": 1,
         "flags": [
           "extern_learn"
@@ -937,7 +931,7 @@
         "state": ""
       },
       {
-        "mac": "8a:90:ff:e3:ec:8c",
+        "mac": "b6:a1:84:3e:c4:cc",
         "flags": [
           "extern_learn"
         ],
@@ -945,20 +939,20 @@
         "state": ""
       },
       {
-        "mac": "3a:9b:27:bb:a1:55",
+        "mac": "56:d7:c3:74:c7:fe",
         "vlan": 1,
         "flags": [],
         "master": "br100",
         "state": "permanent"
       },
       {
-        "mac": "3a:9b:27:bb:a1:55",
+        "mac": "56:d7:c3:74:c7:fe",
         "flags": [],
         "master": "br100",
         "state": "permanent"
       },
       {
-        "mac": "ea:31:ee:24:2f:7a",
+        "mac": "26:e9:f4:88:bd:af",
         "dst": "10.0.0.3",
         "flags": [
           "self",
@@ -983,7 +977,7 @@
         "state": "permanent"
       },
       {
-        "mac": "8a:90:ff:e3:ec:8c",
+        "mac": "b6:a1:84:3e:c4:cc",
         "dst": "10.0.0.2",
         "flags": [
           "self",
@@ -994,31 +988,7 @@
     ],
     "leaf2": [
       {
-        "mac": "1e:f7:07:c7:9c:02",
-        "flags": [],
-        "master": "br100",
-        "state": ""
-      },
-      {
-        "mac": "9e:a7:80:f5:92:ad",
-        "flags": [],
-        "master": "br100",
-        "state": ""
-      },
-      {
-        "mac": "3a:9b:27:bb:a1:55",
-        "flags": [],
-        "master": "br100",
-        "state": ""
-      },
-      {
-        "mac": "02:eb:a4:87:78:2d",
-        "flags": [],
-        "master": "br100",
-        "state": ""
-      },
-      {
-        "mac": "8a:90:ff:e3:ec:8c",
+        "mac": "b6:a1:84:3e:c4:cc",
         "vlan": 1,
         "flags": [
           "extern_learn"
@@ -1027,7 +997,19 @@
         "state": ""
       },
       {
-        "mac": "ea:31:ee:24:2f:7a",
+        "mac": "56:d7:c3:74:c7:fe",
+        "flags": [],
+        "master": "br100",
+        "state": ""
+      },
+      {
+        "mac": "7e:d5:c8:e4:19:b8",
+        "flags": [],
+        "master": "br100",
+        "state": ""
+      },
+      {
+        "mac": "26:e9:f4:88:bd:af",
         "vlan": 1,
         "flags": [
           "extern_learn"
@@ -1036,7 +1018,7 @@
         "state": ""
       },
       {
-        "mac": "ea:31:ee:24:2f:7a",
+        "mac": "26:e9:f4:88:bd:af",
         "flags": [
           "extern_learn"
         ],
@@ -1044,7 +1026,7 @@
         "state": ""
       },
       {
-        "mac": "82:57:2d:9d:3f:af",
+        "mac": "d6:71:c3:be:70:08",
         "vlan": 1,
         "flags": [
           "extern_learn"
@@ -1053,7 +1035,7 @@
         "state": ""
       },
       {
-        "mac": "82:57:2d:9d:3f:af",
+        "mac": "d6:71:c3:be:70:08",
         "flags": [
           "extern_learn"
         ],
@@ -1061,20 +1043,20 @@
         "state": ""
       },
       {
-        "mac": "96:aa:b3:8d:32:a8",
+        "mac": "96:9d:91:70:5e:8b",
         "vlan": 1,
         "flags": [],
         "master": "br100",
         "state": "permanent"
       },
       {
-        "mac": "96:aa:b3:8d:32:a8",
+        "mac": "96:9d:91:70:5e:8b",
         "flags": [],
         "master": "br100",
         "state": "permanent"
       },
       {
-        "mac": "8a:90:ff:e3:ec:8c",
+        "mac": "b6:a1:84:3e:c4:cc",
         "dst": "10.0.0.3",
         "flags": [
           "self",
@@ -1083,7 +1065,7 @@
         "state": ""
       },
       {
-        "mac": "ea:31:ee:24:2f:7a",
+        "mac": "26:e9:f4:88:bd:af",
         "dst": "10.0.0.3",
         "flags": [
           "self",
@@ -1108,7 +1090,7 @@
         "state": "permanent"
       },
       {
-        "mac": "82:57:2d:9d:3f:af",
+        "mac": "d6:71:c3:be:70:08",
         "dst": "10.0.0.1",
         "flags": [
           "self",
@@ -1119,31 +1101,25 @@
     ],
     "leaf3": [
       {
-        "mac": "1e:f7:07:c7:9c:02",
+        "mac": "96:9d:91:70:5e:8b",
         "flags": [],
         "master": "br100",
         "state": ""
       },
       {
-        "mac": "96:aa:b3:8d:32:a8",
+        "mac": "22:4c:33:e6:0f:7a",
         "flags": [],
         "master": "br100",
         "state": ""
       },
       {
-        "mac": "4a:fb:f0:3b:cf:ea",
+        "mac": "56:d7:c3:74:c7:fe",
         "flags": [],
         "master": "br100",
         "state": ""
       },
       {
-        "mac": "3a:9b:27:bb:a1:55",
-        "flags": [],
-        "master": "br100",
-        "state": ""
-      },
-      {
-        "mac": "82:57:2d:9d:3f:af",
+        "mac": "d6:71:c3:be:70:08",
         "vlan": 1,
         "flags": [
           "extern_learn"
@@ -1152,7 +1128,7 @@
         "state": ""
       },
       {
-        "mac": "82:57:2d:9d:3f:af",
+        "mac": "d6:71:c3:be:70:08",
         "flags": [
           "extern_learn"
         ],
@@ -1160,7 +1136,7 @@
         "state": ""
       },
       {
-        "mac": "8a:90:ff:e3:ec:8c",
+        "mac": "b6:a1:84:3e:c4:cc",
         "vlan": 1,
         "flags": [
           "extern_learn"
@@ -1169,7 +1145,7 @@
         "state": ""
       },
       {
-        "mac": "8a:90:ff:e3:ec:8c",
+        "mac": "b6:a1:84:3e:c4:cc",
         "flags": [
           "extern_learn"
         ],
@@ -1177,20 +1153,20 @@
         "state": ""
       },
       {
-        "mac": "9e:a7:80:f5:92:ad",
+        "mac": "7e:d5:c8:e4:19:b8",
         "vlan": 1,
         "flags": [],
         "master": "br100",
         "state": "permanent"
       },
       {
-        "mac": "9e:a7:80:f5:92:ad",
+        "mac": "7e:d5:c8:e4:19:b8",
         "flags": [],
         "master": "br100",
         "state": "permanent"
       },
       {
-        "mac": "82:57:2d:9d:3f:af",
+        "mac": "d6:71:c3:be:70:08",
         "dst": "10.0.0.1",
         "flags": [
           "self",
@@ -1215,7 +1191,7 @@
         "state": "permanent"
       },
       {
-        "mac": "8a:90:ff:e3:ec:8c",
+        "mac": "b6:a1:84:3e:c4:cc",
         "dst": "10.0.0.2",
         "flags": [
           "self",
@@ -1243,15 +1219,15 @@
     "loss_pct": 0.0
   },
   "failover": {
-    "mac": "8a:90:ff:e3:ec:8c",
+    "mac": "b6:a1:84:3e:c4:cc",
     "old_leaf": "leaf2",
     "new_leaf": "leaf3",
     "before": {
-      "mac": "8a:90:ff:e3:ec:8c",
+      "mac": "b6:a1:84:3e:c4:cc",
       "dst": "10.0.0.2"
     },
     "after": {
-      "mac": "8a:90:ff:e3:ec:8c",
+      "mac": "b6:a1:84:3e:c4:cc",
       "dst": "10.0.0.3"
     },
     "ping_host1_to_host2_after_failover": {
