@@ -8,8 +8,7 @@ together by hand. A static dashboard (`web/`, see "Public interface" below)
 displays the fabric's own live output, captured fresh on every run — it's a
 window onto the real thing, not a drawing of one.
 
-Built to close a specific, named gap: the University of Oxford Senior Data
-Centre Network Engineer role (interviewed July 2026) listed BGP unnumbered,
+Built to close a specific, named gap listed BGP unnumbered,
 VXLAN, EVPN, EVPN multihoming, Cumulus/SONiC, and Ansible/Puppet/Chef as
 essential or desirable experience. This lab is those requirements, built and
 verified, not just read about.
